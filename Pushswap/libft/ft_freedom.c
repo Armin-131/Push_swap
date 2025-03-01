@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pushswap.h                                         :+:      :+:    :+:   */
+/*   freedom.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abenaven <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/17 21:15:39 by abenaven          #+#    #+#             */
-/*   Updated: 2025/02/17 21:15:43 by abenaven         ###   ########.fr       */
+/*   Created: 2025/03/01 20:28:27 by abenaven          #+#    #+#             */
+/*   Updated: 2025/03/01 20:28:29 by abenaven         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <limits.h>
-# include "libft.h"
-
-typedef	struct	node
+void	ft_freedom(char **matrix)
 {
-	int		number;
-	int		position;
-	struct 	node * next;
-} node;
+	int i;
 
-node	*newnode(int value);
-void	*addback(node *whatevs, node **stack);
-
-void checking(char *n);
-
-#endif
+	i = 0;
+	while(matrix[i])
+	{
+		free(matrix[i]);
+		i++;
+	}
+	free(matrix);
+}

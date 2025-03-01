@@ -4,22 +4,22 @@ CFLAGS = -Wall -Werror -Wextra
 
 CC = cc
 
-SRC = utils.c pushswap.c 
+SRC = listutils.c pushswap.c 
 
 OBJS = $(SRC:.c=.o)
 
-LIBFT = libft/libft.a
+LIBFT = ./libft
+
+RM = rm -f
 
 %.o: %.c
-		$(CC) $(CFLAGS) -c $< -I libft -o $@
+		$(CC) $(CFLAGS) -c $< -I./libft -o $@
 
 all: $(NAME)
 
 $(NAME): $(LIBFT) $(OBJS)
-		$(CC) $(CFLAGS) $(LIBFT) $(OBJS)	
-
-$(LIBFT):
-		make -C libft
+		make -s -C $(LIBFT)
+		$(CC) $(CFLAGS) $(OBJS) -L$(LIBFT) -lft -o $(NAME)	
 
 clean:
 		$(RM) $(OBJS)

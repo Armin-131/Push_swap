@@ -6,7 +6,7 @@
 /*   By: abenaven <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 16:18:16 by abenaven          #+#    #+#             */
-/*   Updated: 2024/10/10 21:00:46 by abenaven         ###   ########.fr       */
+/*   Updated: 2025/02/24 14:36:42 by abenaven         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	ft_atoi(const char *nptr)
 		fin = (fin * 10) + (nptr[i] - '0');
 		i++;
 	}
-	if ((sign == 1 && fin > 2147483647) || (sign == -1 && fin < -2147483648))
+	if ((sign == 1 && fin > 2147483647) || (sign == -1 && fin <= -2147483648))
 		return (0);
 	return (sign * fin);
 }
