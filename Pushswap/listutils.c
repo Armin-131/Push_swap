@@ -12,11 +12,11 @@
 
 #include "push_swap.h"
 
-node	*newnode(int value)
+t_list	*newnode(int value)
 {
-	node	*new;
+	t_list	*new;
 
-	new = malloc(sizeof(node));
+	new = malloc(sizeof(t_list));
 	if (!new)
 		return(NULL);
 	new->number = value;
@@ -24,9 +24,9 @@ node	*newnode(int value)
 	return (new);
 }
 
-void	*addback(node *whatevs, node **stack)
+void	addback(t_list *whatevs, t_list **stack)
 {
-	node *last;
+	t_list *last;
 	
 	if(!stack || !whatevs)
 		return;

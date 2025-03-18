@@ -1,6 +1,6 @@
 NAME = push_swap
 
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -g3 -fsanitize=address
 
 CC = cc
 
@@ -29,5 +29,8 @@ fclean: clean
 		make fclean -C libft
 
 re: fclean all
+
+run: all
+	./$(NAME) "3 0" "2 -5 6" "1 4"
 
 .PHONY: all clean fclean re
